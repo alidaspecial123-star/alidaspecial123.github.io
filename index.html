@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Screen Layout</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.2/lib/p5.min.js"></script>
+
+    <script src="sketch.js"></script>
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: sans-serif;
+            /* Transparent background so we can see the fractal behind the boxes */
+            background-color: transparent; 
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-title {
+            text-align: center;
+            margin: 0;
+            padding: 20px 0;
+            background-color: rgba(255, 255, 255, 0.8); /* Made slightly see-through */
+        }
+
+        #defaultBlock {
+            display: flex;
+            flex: 1;
+            width: 100%;
+        }
+
+        .box {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* Added opacity (0.8) so the fractal shows through the primary colors */
+            background-color: rgba(0, 0, 0, 0.8); 
+        }
+
+        #block1 {
+            background-color: rgba(255, 0, 0, 0.8); /* Red with transparency */
+            color: white;
+        }
+
+        #block2 {
+            background-color: rgba(0, 0, 255, 0.8); /* Blue with transparency */
+            color: white;
+        }
+
+        #block3 {
+            background-color: rgba(255, 255, 0, 0.8); /* Yellow with transparency */
+            color: black;
+        }
+
+        .box h2 {
+            margin-top: 0;
+        }
+
+        .box a {
+            color: inherit;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <a class="weatherwidget-io" href="https://forecast7.com/en/40d71n74d01/new-york/" data-label_1="NEW YORK" data-label_2="WEATHER" data-theme="original" >NEW YORK WEATHER</a>
+    <script>
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+    </script>
+
+    <h2 class="main-title">Ali Amazing Webthingy</h2>
+
+    <div id="defaultBlock">
+        
+        <div class="box" id="block1">
+            <h2>Play Games!</h2>
+            <p><a href="https://www.roblox.com" target="_blank">Play Roblox</a></p>
+        </div>
+
+        <div class="box" id="block2">
+            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/0UMMIkurRUmkruZ3KGBLtG?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        <div class="box" id="block3">
+            <h2>A Secret...</h2>
+            <p><a href="index2.html">Go to my alternate website</a></p>
+        </div>
+
+    </div>
+
+</body>
+</html>
